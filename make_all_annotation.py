@@ -1,7 +1,5 @@
-#%%
 import pandas as pd
 
-#%%
 dfs = []
 for i in range(1, 5):
     anno_file = f"/media/data/gen_orig_clas/train_{i}.csv"

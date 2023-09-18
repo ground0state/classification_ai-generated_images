@@ -1,9 +1,8 @@
-# %%
 import pandas as pd
 import numpy as np
 import cv2
 from matplotlib import pyplot as plt
-# %%
+
 file_list = [
     "work_dirs/exp09/submission_exp09_val_group_1.csv",
     "work_dirs/exp09_2/submission_exp09_2_val_group_2.csv",
@@ -43,34 +42,3 @@ all_df["merged_score"] = merged_score
 all_df = all_df.reset_index()
 all_df[["filename", "merged_score"]].to_csv(
     "submission_merged.csv", index=False, header=False)
-# %%%
-# all_df
-# # %%
-# x = all_df[[f"score_{i}" for i in range(1, 5)]].max(
-#     axis=1) - all_df[[f"score_{i}" for i in range(1, 5)]].min(axis=1)
-# # %%
-# temp = all_df[x > 0.5]
-# temp2 = temp[all_df[x > 0.5]["merged_score"] < 0.5]
-# %%
-# count = 0
-# for im in temp2["filename"].tolist():
-#     count += 1
-#     if count < 200:
-#         continue
-#     print(im)
-#     im = cv2.imread(f"/media/data/gen_orig_clas/evaluation/{im}")
-#     im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
-#     plt.imshow(im)
-#     plt.show()
-
-#     if count > 230:
-#         break
-
-# # %%
-# all_df.loc[x > 0.5, "merged_score"] = all_df[x > 0.5]["score_5"]
-# # %%
-# all_df[x > 0.5]
-# # %%
-# all_df[["filename", "merged_score"]].to_csv(
-#     "submission_merged.csv", index=False, header=False)
-# # %%
