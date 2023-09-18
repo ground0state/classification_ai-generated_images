@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd `dirname $0`
+SCRIPT_PATH=$(readlink -f "$0")
+DIR_PATH=$(dirname "$SCRIPT_PATH")
+DIR_NAME=$(basename "$DIR_PATH")
+
+python train.py | tee "../work_dirs/$DIR_NAME/output.log"
